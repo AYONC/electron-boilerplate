@@ -2,11 +2,13 @@
   "name": "electron-boilerplate-ts-react",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "src/main/init.js",
+  "main": ".webpack/main",
   "scripts": {
-    "dev": "cross-env ELECTRON_ENV='development' electron .",
-    "prod": "cross-env ELECTRON_ENV='production' electron .",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "repository": "https://github.com/ayonc/electron-boilerplate-ts-react",
   "keywords": [
@@ -17,19 +19,32 @@
     "demo"
   ],
   "author": "GitHub",
-  "devDependencies": {
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
-    "electron": "^5.0.7",
-    "electron-reload": "^1.4.1",
-    "typescript": "^3.5.3"
+  "config": {
+    "forge": "./forge.config.js"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@svgr/webpack": "^4.3.2",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "electron-prebuilt-compile": "^4.0.0",
-    "react-hot-loader": "^4.5.3"
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.43",
+    "@electron-forge/maker-deb": "6.0.0-beta.43",
+    "@electron-forge/maker-rpm": "6.0.0-beta.43",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.43",
+    "@electron-forge/maker-zip": "6.0.0-beta.43",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.43",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "css-loader": "^3.0.0",
+    "electron": "5.0.7",
+    "node-loader": "^0.6.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3"
   }
 }

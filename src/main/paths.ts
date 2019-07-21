@@ -8,12 +8,12 @@ const electronApp = app || remote.app;
 // eslint-disable-next-line operator-linebreak
 const appDirectory =
   process.env.ELECTRON_ENV === 'development' ? fs.realpathSync(process.cwd()) : electronApp.getAppPath();
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const resolveApp = (relativePath: string)=> path.resolve(appDirectory, relativePath);
 
 const userDataPath = electronApp.getPath('userData');
 
 const homeDir = os.homedir ? os.homedir() : process.env.HOME;
-const logDir = process.platform === 'darwin'
+const logDir = process.platform === 'darwin' && homeDir
   ? path.join(homeDir, 'Library', 'Logs', path.basename(userDataPath))
   : path.join(userDataPath, 'Logs');
 
