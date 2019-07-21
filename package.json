@@ -1,0 +1,26 @@
+{
+  "name": "electron-boilerplate-ts-react",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "src/main/init.js",
+  "scripts": {
+    "dev": "cross-env ELECTRON_ENV='development' electron .",
+    "prod": "cross-env ELECTRON_ENV='production' electron .",
+    "start": "electron ."
+  },
+  "repository": "https://github.com/ayonc/electron-boilerplate-ts-react",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "devDependencies": {
+    "electron": "^5.0.7",
+    "electron-prebuilt-compile": "^4.0.0",
+    "electron-reload": "^1.4.1",
+    "typescript": "^3.5.3"
+  }
+}
