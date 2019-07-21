@@ -2,12 +2,20 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import { Paths } from './appPaths';
+import { enableLiveReload } from 'electron-compile';
+
+const isDev = process.env.ELECTRON_ENV === 'development';
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow: BrowserWindow | null;
 
 function createWindow () {
+  if (isDev) {
+    enableLiveReload();
+  }
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
